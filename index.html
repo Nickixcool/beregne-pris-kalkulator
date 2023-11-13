@@ -1,0 +1,112 @@
+<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+<link rel="stylesheet" href="styles.css">
+
+<div class="calculator-box">
+<div class="title-box">
+   <h2>Beregning pris regnskap</h2>
+</div>
+<form>
+   <div class="form-container">
+      <div class="form-row">
+         <div class="field-container">
+            <div class="user-box">
+               <input id="incoming-invoices" type="number" name="" required="" min="0" step="1" oninput="validity.valid||(value='');">
+               <label>Antall inngående faktura</label>
+            </div>
+            <div class="user-box">
+               <input id="outgoing-invoices" type="number" name="" required="" min="0" step="1" oninput="validity.valid||(value='');">
+               <label>Antall utgående faktura</label>
+            </div>
+            <div class="user-box">
+               <input id="credit-card-shopping" type="number" name="" required="" min="0" step="1" oninput="validity.valid||(value='');">
+               <label>Antall småkjøp/kortbruk</label>
+            </div>
+            <div class="user-box">
+               <input id="number-employees" type="number" name="" required="" min="0" step="1" oninput="validity.valid||(value='');">
+               <label>Antall ansatte lønn</label>
+            </div>
+            <div class="user-box">
+               <input id="foreign-transactions" type="number" name="" required="" min="0" step="1" oninput="validity.valid||(value='');">
+               <label>Antall utenlandstrans</label>
+            </div>
+         </div>
+         <div class="field-container" id="right-column">
+            <div>
+               <div class="conditional">
+                  <div>
+                     <p>Kontantsalg/kasse</p>
+                  </div>
+                  <div class="button r" id="button-1">
+                     <input id="cash-register" type="checkbox" checked="true" class="checkbox">
+                     <div class="knobs"></div>
+                     <div class="layer"></div>
+                  </div>
+               </div>
+               <div class="conditional">
+                  <div>
+                     <p>Vipps/bankterminal</p>
+                  </div>
+                  <div class="button r" id="button-1">
+                     <input id="payment-terminal" type="checkbox" checked="true"  class="checkbox">
+                     <div class="knobs"></div>
+                     <div class="layer"></div>
+                  </div>
+               </div>
+               <div class="conditional">
+                  <div>
+                     <p>Avdelingsregnskap</p>
+                  </div>
+                  <div class="button r" id="button-1">
+                     <input id="intercompany-accounting" type="checkbox" checked="true"  class="checkbox">
+                     <div class="knobs"></div>
+                     <div class="layer"></div>
+                  </div>
+               </div>
+               <div class="conditional">
+                  <div>
+                     <p>Prosjektregnskap</p>
+                  </div>
+                  <div class="button r" id="button-1">
+                     <input id="cost-handling" type="checkbox" checked="true"  class="checkbox">
+                     <div class="knobs"></div>
+                     <div class="layer"></div>
+                  </div>
+               </div>
+               <div class="reset-container">
+                  <div id="nullstille" class="reset-button">Nullstille</div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="form-row bottom-row">
+         <div class="partial-results">
+            <div class="partial-result">
+               <div class="p-result-text">Lisensavgift/grunnpris</div>
+               <div class="p-result-cost">
+                  <p id="licensing-costs">-</p>
+               </div>
+            </div>
+            <div class="partial-result">
+               <div class="p-result-text">Kontrollhandlinger</div>
+               <div class="p-result-cost">
+                  <p id="q-control-activities">-</p>
+               </div>
+            </div>
+            <div>
+            </div>
+         </div>
+         <div  class="results">
+            <div class="result-text">
+               <div class="monthly-price-text">Din pris pr måned ex mva: </div>
+               <span id="price">-</span>
+            </div>
+            <div id="button-container">
+               <p>* hvis kunde fakturer selv settes utgående faktura til antall null<br>
+                  ** småkjøp/kortbruk kan f.eks. være handle i butikk/nettbutikk
+               </p>
+            </div>
+         </div>
+      </div>
+</form>
+<script src="script.js" type="text/javascript"></script>
+</div>

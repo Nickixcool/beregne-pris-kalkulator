@@ -1,0 +1,414 @@
+.calculator-box {
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  width:98%;
+  top: 50%;
+  left: 50%;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background-color: #EEEEEE;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.calculator-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #2962FF;
+  text-align: center;
+}
+
+.calculator-box .user-box {
+  position: relative;
+}
+
+.calculator-box .user-box input {
+  width: 75%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #263238;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #263238;
+  outline: none;
+  background: transparent;
+}
+.calculator-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #546E7A;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.calculator-box .user-box input:focus ~ label,
+.calculator-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #2962FF;
+  font-size: 13px;
+}
+
+/*CUSTOM NUMBER INPUT*/
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Custom Conditional Selectors */
+
+*{
+    user-select: none;
+    -webkit-tap-highlight-color:transparent;
+}
+
+*:focus
+{
+    outline: none;
+}
+
+.button-cover
+{
+    height: 100px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px -8px #c5d6d6;
+    border-radius: 4px;
+}
+
+.button-cover:before
+{
+    counter-increment: button-counter;
+    content: counter(button-counter);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #0D47A1;
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px;
+}
+
+.button-cover, .knobs, .layer
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button
+{
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    overflow: hidden;
+}
+
+.button.r, .button.r .layer
+{
+    border-radius: 100px;
+}
+
+.button.b2
+{
+    border-radius: 2px;
+}
+
+.checkbox
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs
+{
+    z-index: 2;
+}
+
+.layer
+{
+    width: 100%;
+    background-color: #81D4FA;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+/* Button 1 */
+#button-1 .knobs:before
+{
+    content: 'JA';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 10px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #03A9F4;
+    border-radius: 50%;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+#button-1 .checkbox:checked + .knobs:before
+{
+    content: 'NEI';
+    left: 42px;
+    background-color: #DD2C00;
+}
+
+#button-1 .checkbox:checked ~ .layer
+{
+    background-color: #EF9A9A;
+}
+
+#button-1 .knobs, #button-1 .knobs:before, #button-1 .layer
+{
+    transition: 0.3s ease all;
+}
+
+/* Custom Conditional Selectors */
+
+
+.conditional{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top:5px;
+  margin-bottom: 15px;
+  width:100%;
+}
+
+.form-container{
+  display:flex;
+  justify-content:space-around;
+  flex-direction:column;
+}
+
+.field-container{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  width:50%;
+}
+
+#right-column{
+  
+}
+
+.results{
+  display:flex;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items:center !important;
+  
+}
+
+.conditional div p{
+  color:#263238;
+}
+
+.result-text p{
+  font-size: 1.2rem;
+}
+
+.result-text p span{
+  font-weight: bold;
+}
+
+.form-row{
+  display:flex;
+  justify-content: space-around;
+}
+
+.bottom-row div{
+  width: 50%;
+  display:flex;
+  justify-content: center;
+  flex-direction:column;
+}
+
+.partial-results{
+  padding:10px;
+  background-color: #CFD8DC;
+  border-radius: 10px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+}
+
+.partial-results div{
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.partial-result div{
+  width:75%;
+}
+
+div.p-result-cost{
+  font-weight: 600;
+  width: 25%;
+  text-align: center;
+  display:flex;
+  justify-content: flex-end;
+}
+
+.monthly-price-text{
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  width: 100% !important;
+  text-align: center;
+  font-weight: 500;
+}
+
+.result-text{
+  width: 100%;
+  
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.results div.result-text{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+#price{
+  font-weight: 1.5rem;
+  font-weight: 600;
+}
+
+#button-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  text-align:center;
+  width:100%;
+}
+
+#calculate-button{
+  font-weight: bold;
+  width:75%;
+}
+
+ #calculate-button{
+    padding: 20px;
+ }
+
+#button-container p{
+  font-size: 0.8rem;
+  color: #78909C;
+}
+
+.reset-button {
+  padding: 3px;
+  border-radius: 5px;
+  align-items: center;
+  background-color: #06f;
+  border: 2px solid #06f;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter,sans-serif;
+  font-size: 15px;
+  justify-content: center;
+  outline: 0;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.reset-button:hover {
+  background-color: #3385ff;
+  border-color: #3385ff;
+  fill: #06f;
+}
+
+
+/*Responsive design for mobiles*/
+
+@media (max-width: 1000px){
+  
+  .results{
+    padding-top:30px;
+  }
+  
+  #button-container{
+    margin: 20px;
+  }
+  
+  #calculate-button{
+    width:50%;
+    padding: 20px;
+  }
+  .form-container{
+    flex-direction:column;
+  }
+  
+  .field-container{
+    width:100%;
+  }
+  
+  .calculator-box{
+    width:90%;
+  }
+  
+  .form-row{
+    flex-direction: column;
+  }
+  
+  .bottom-row{
+    align-items: center;
+    height:25%;
+    width: 100%;
+  }
+  
+  .results div.result-text{
+    width: 100%;
+    display:flex;
+    align-items: center;
+  }
+  
+  .bottom-row div{
+    width: 100% !important;
+    margin: 5px;
+  }
+}
